@@ -1,0 +1,44 @@
+.form {
+    margin: 0px auto;
+    width: 10rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.input {
+    margin-bottom: 5px;
+    margin-top: 25px;
+    width: 50px;
+    height: 20px;
+    position: relative;
+    top: -15px;
+    margin-left: 5px;
+}
+
+.inputBreed {
+    margin-bottom: 5px;
+    margin-top: 25px;
+    width: 147px;
+    height: 20px;
+    position: relative;
+    top: -15px;
+    margin-left: 5px;
+}
+
+.error {
+    color: red;
+    font-weight: 700;
+    font-size: 13px;
+    display: flex;
+    justify-content: center;
+    margin-left: 5px;
+    position: relative;
+    top: -15px;
+}

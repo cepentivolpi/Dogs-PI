@@ -1,0 +1,64 @@
+.body {
+    text-align: left;
+    color: snow;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: url(https://cdn.pixabay.com/photo/2017/08/21/23/36/dog-2667347_1280.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    width: 100vw;
+    height: 100vw;
+}
+
+.filtrado {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 20px;
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+
+.cards {
+    display: flex;
+    flex-flow: wrap;
+    justify-content: center;
+}
+
+.cargar {
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.orden {
+    position: relative;
+    margin-left: 60px;
+    width: 500px;
+}
+
+.error {
+    font-size: 70px;
+    color: orange;
+}
+
+.select {
+    margin-left: 5px;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.button {
+    height: 20px;
+    width: 110px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.buttonFilter {
+    cursor: pointer;
+}

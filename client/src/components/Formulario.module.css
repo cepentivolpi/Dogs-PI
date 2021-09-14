@@ -1,0 +1,50 @@
+.body {
+    text-align: center;
+    color: rgb(0, 0, 0);
+    position: absolute;
+    top: -200px;
+    right: 0;
+    left: 0px;
+    bottom: 0;
+    background: url(https://cdn.pixabay.com/photo/2019/02/23/22/32/dog-4016668_1280.jpg);
+    background-size: cover;
+    width: 105vw;
+    height: 133vh
+}
+
+.form {
+    width: 20rem;
+    top: 230px;
+    position: relative;
+    background-color: #000000b0;
+    color: #ffffff;
+    left: -300px;
+    height: 550px;
+}
+
+.ul {
+    list-style: none;
+}
+
+.prop {
+    display: flex;
+    border: solid;
+    width: 20rem;
+    height: 110px;
+    flex-wrap: wrap;
+    border-width: 1px;
+}
+
+.h4 {
+    width: 600px;
+    margin: 5px
+}
+
+.temperament {
+    height: 100px;
+    margin-top: 10px;
+}
+
+.select {
+    cursor: pointer;
+}

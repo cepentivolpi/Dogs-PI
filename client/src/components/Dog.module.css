@@ -1,0 +1,49 @@
+.body {
+    text-align: left;
+    color: snow;
+    position: absolute;
+    top: -0;
+    right: -200px;
+    left: 0;
+    bottom: 0;
+    background: url(https://cdn.pixabay.com/photo/2018/11/01/00/55/animal-3786987_1280.jpg);
+    background-size: cover;
+}
+
+.info {
+    position: absolute;
+    left: 20px;
+    top: 30px;
+    text-align: -webkit-left;
+}
+
+.name {
+    margin-left: 15px;
+    display: block;
+}
+
+.img {
+    border: solid;
+    border-radius: 20px;
+    background-color: snow;
+}
+
+.descripcion {
+    background-color: rgb(76 76 88 / 38%);
+    display: inline-table;
+    position: absolute;
+    width: max-content;
+    margin-left: 15px;
+    border-radius: 10px;
+    width: max-content;
+    height: 200px;
+    width: 500px;
+}
+
+.error {
+    position: relative;
+    top: 120px;
+    left: 30px;
+    font-size: 54px;
+    color: orange;
+}

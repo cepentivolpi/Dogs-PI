@@ -1,0 +1,37 @@
+.card {
+    background-color: #6859594f;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 2rem;
+    font-weight: bold;
+    border-radius: 20px;
+    width: 250px;
+    height: 350px;
+}
+
+.name {
+    color: snow;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 30px;
+}
+
+.link {
+    text-decoration: none;
+}
+
+.temperamentos {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+    margin-bottom: 0px;
+}
+
+.peso {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
