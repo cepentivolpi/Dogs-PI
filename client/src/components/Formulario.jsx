@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { connect } from "react-redux";
-import { filterTemperaments, postDog } from "../Actions/index"
+import { filterTemperaments, postDog} from "../Actions/index"
 import FormItem from "./FormItem";
 import styles from "./Formulario.module.css"
 
@@ -30,7 +30,7 @@ function validate(data) {
   return errors;
 }
 
-function Formulario({ filterTemperaments, postDog, temperaments }) {
+function Formulario({ filterTemperaments, postDog, temperaments}) {
   const [formData, setFormData] = React.useState({
     name: "",
     weightmin: "",

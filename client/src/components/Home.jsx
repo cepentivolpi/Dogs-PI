@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import Nav from "./Nav"
 import Card from "./Card"
 import Pages from "./Pages"
-import { getDogs, filterTemperaments, filterTemperamentsAction, orden } from "../Actions/index"
+import { getDogs, filterTemperaments, filterTemperamentsAction, orden, dogsMatch } from "../Actions/index"
 import styles from "./Home.module.css"
 
 
@@ -36,12 +36,13 @@ function Home({ dogs, temperaments, getDogs, filterTemperaments, filterTemperame
         orden(e.target.value);
         setPaginaActual(1);
         setOrdenar("Ordenado " + e.target.value)
-
     }
 
     function handleOnClick(e) {
         e.preventDefault();
         getDogs()
+        setPaginaActual(1);
+        setOrdenar("Ordenado " + e.target.value)
     }
 
     function handleTemperament(e) {
@@ -64,7 +65,7 @@ function Home({ dogs, temperaments, getDogs, filterTemperaments, filterTemperame
     }
     return (
         <div className={styles.body}>
-            <Nav getDogs={getDogs} />
+            <Nav dogs={dogs} setPaginaActual= {setPaginaActual} getDogs={getDogs}/>
 
 
             <div className={styles.filtrado}>
@@ -81,10 +82,10 @@ function Home({ dogs, temperaments, getDogs, filterTemperaments, filterTemperame
 
                     <select className={styles.select} onChange={e => handleTemperament(e)}>
 
-                       <option value="">Temperaments</option>  
-                       {temperaments.length && <option value="todos">All</option>}
+                    {temperaments?.length && <option value="">Temperaments</option> }
+                       {temperaments?.length && <option value="todos">All</option>}
 
-                        {typeof temperaments[0] === "object" ? temperaments?.map(t => {
+                        {temperaments?.length && (typeof temperaments[0] === "object") ? temperaments?.map(t => {
                             return <option key={t.name} value={t.name}>{t.name}</option>
                         }) : <option>ERROR</option>
                         }
@@ -95,7 +96,9 @@ function Home({ dogs, temperaments, getDogs, filterTemperaments, filterTemperame
                     <button className={styles.buttonFilter} onClick={e => { handleFiltrado(e) }}>Filter</button>
                 </div>
             </div>
+            
             <Pages dogsPorPagina={dogsPorPagina} dogs={dogs?.length} paginado={paginado} />
+
             <div className={styles.orden}>
                 <span className={styles.span}>Order: </span>
                 <select className={styles.select} onChange={e => hanleOrden(e)}>
@@ -108,10 +111,10 @@ function Home({ dogs, temperaments, getDogs, filterTemperaments, filterTemperame
             </div>
             <div className={styles.cards}>
 
-            {divisionDogs.length &&   divisionDogs?.map(d => {
+            {typeof divisionDogs[0] === "object" ? divisionDogs?.map(d => {
 
                     return (<Card key={d.name} id={d.id} name={d.name} image={d.image} weight={d.weight} temperament={!d.db ? d.temperament : d.temperaments} />)
-                })
+                }) : <h5 className={styles.error}>{dogs}</h5>
                 }
             </div>
             <div className={styles.cargar}>
@@ -123,7 +126,7 @@ function Home({ dogs, temperaments, getDogs, filterTemperaments, filterTemperame
 function mapStateToProps(state) {
     return {
         dogs: state.dogs,
-        temperaments: state.temperaments
+        temperaments: state.temperaments,
     };
 }
 export default connect(mapStateToProps, { getDogs, filterTemperaments, filterTemperamentsAction, orden })(

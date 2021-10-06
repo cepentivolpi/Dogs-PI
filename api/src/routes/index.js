@@ -20,6 +20,7 @@ router.get("/dogs", async (req, res) => {
     try{
 
         const d = await axios.get(`https://api.thedogapi.com/v1/breeds/${API_KEY}` ) 
+        
         const re = await d.data.map(r=>{
             return {
                 id: r.id,
@@ -40,6 +41,7 @@ router.get("/dogs", async (req, res) => {
                 }
             }
         })
+        
         let dogsTotales = re.concat(rdb)
         if(nameQuery){
             let porNombre = await dogsTotales.filter(r => r.name.toLowerCase().includes(nameQuery.toLowerCase()));
@@ -85,7 +87,6 @@ router.get("/dogs", async (req, res) => {
         
         if(id){
             let idEncontrado = await dogsTotales.filter( r => r.id == id)
-            console.log(idEncontrado);
             idEncontrado.length ? res.status(200).send(idEncontrado) : res.status(404).send("Not found id dog" );
         }
       } catch (error) {

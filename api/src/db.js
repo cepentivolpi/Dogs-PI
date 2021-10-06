@@ -36,18 +36,6 @@ sequelize.models = Object.fromEntries(capsEntries);
 // Para relacionarlos hacemos un destructuring
 const { Dog, Temperament } = sequelize.models;
 
-/*
-(async() => {
-  await Temperament.sync({force:true})
-  const cu = await Temperament.create({
-    name: "Curious"
-  })
-  //const cu = await Temperaments.findByPk(1);
-  console.log(cu.toJSON())
-  
-})()
-
-*/
 
 // Aca vendrian las relaciones
 // Product.hasMany(Reviews);

@@ -6,14 +6,14 @@ import styles from "./Dog.module.css"
 
 
 function Dog(props) {
-
-
+  const {getDog} = props
+  const id = props.match.params.id
   useEffect(() => {
-    props.getDog(props.match.params.id)
-    return () => props.getDog()
-  }, [props.getDog])
+    getDog(id)
+    return () => getDog()
+  }, [getDog, id])
 
-  if (props.dog.length > 0) {
+  if (props.dog.length > 0 && typeof props.dog[0] === "object")  {
     if(!props.dog[0].image) {
 
       props.dog[0].image = "https://cdn.pixabay.com/photo/2020/07/11/11/49/lacy-5393747_1280.png";
@@ -34,7 +34,7 @@ function Dog(props) {
             <h4>Life Span: {props.dog[0]?.life_span}</h4>
           </div>
         </div> :
-
+      
         <h5 className={styles.error}>{props.dog}</h5>
       }
     </div>

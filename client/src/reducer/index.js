@@ -5,14 +5,16 @@ import {
     ORDEN,
     POST_DOG,
     GET_DOG,
-    CLEAR_DOG
+    CLEAR_DOG,
+    DOGS_MATCH
 } from "../Actions/types";
 
 const initialState = {
     dogs: [],
     dogsAux: [],
     temperaments: [],
-    dog: []
+    dog: [],
+    dogM: [] 
 };
 
 
@@ -125,6 +127,8 @@ function reducer(state = initialState, { type, payload }) {
             return {...state, dog: payload };
         case CLEAR_DOG:
             return {...state, dog: [] };
+        case DOGS_MATCH:
+            return {...state, dogM : payload}
         default:
             return state;
     }

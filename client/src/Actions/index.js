@@ -1,5 +1,5 @@
 import axios from "axios";
-import { GET_DOGS, FILTER_TEMPERAMENTS, FILTER_TEMPERAMENTS_ACTION, ORDEN, GET_DOG, CLEAR_DOG} from "./types";
+import { GET_DOGS, FILTER_TEMPERAMENTS, FILTER_TEMPERAMENTS_ACTION, ORDEN, GET_DOG, CLEAR_DOG, DOGS_MATCH} from "./types";
 
 
 export function getDogs(name){
@@ -13,9 +13,26 @@ export function getDogs(name){
         }else{
             json = await axios.get(`http://localhost:3001/dogs?name=${name}`)
         }
+        
         return dispatch({ type: GET_DOGS, payload: json.data });
         }catch(error){
             return dispatch({ type: GET_DOGS, payload: error.response?.data });
+        }
+    }
+} 
+
+export function dogsMatch(name){
+    return async function(dispatch){
+        let json;
+        
+        try{
+        
+            json = await axios.get(`http://localhost:3001/dogs?name=${name}`)
+        
+        
+        return dispatch({ type: DOGS_MATCH, payload: json.data });
+        }catch(error){
+            return dispatch({ type: DOGS_MATCH, payload: error.response?.data });
         }
     }
 } 

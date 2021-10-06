@@ -44,6 +44,8 @@
 .error {
     font-size: 70px;
     color: orange;
+    background-color: #403636a1;
+    border-radius: 10px;
 }
 
 .select {
